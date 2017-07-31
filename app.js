@@ -1,0 +1,14 @@
+var express=require('express');
+var app=express();
+var fs=require('fs');
+var bodyParser=require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(express.static(__dirname) );
+var abspath=process.cwd()+"/public/student.json";
+console.log(abspath);
+var port = process.env.PORT || 8080;
+var router = express.Router();
+require('./public/routes')(app,fs,abspath);
+app.listen(port);
+console.log("Port is listening on "+port);
