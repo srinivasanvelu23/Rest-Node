@@ -1,5 +1,5 @@
 {
-  "name": "resclient",
+   "name": "resclient",
   "version": "1.0.0",
   "description": "File uploading node js",
   "main": "app.js",
